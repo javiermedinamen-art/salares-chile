@@ -1,0 +1,25 @@
+{
+  "name": "salares-chile",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mapa interactivo de los salares y lagunas de Chile — Fundación Salares (prototipo)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "db:build": "node --disable-warning=ExperimentalWarning scripts/build-db.mjs && node --disable-warning=ExperimentalWarning scripts/export-static.mjs",
+    "export": "node --disable-warning=ExperimentalWarning scripts/export-static.mjs",
+    "start": "node --disable-warning=ExperimentalWarning server/index.mjs",
+    "dev": "node --disable-warning=ExperimentalWarning --watch server/index.mjs",
+    "demo:video": "node --disable-warning=ExperimentalWarning scripts/demo-video.mjs"
+  },
+  "dependencies": {
+    "compression": "^1.8.2",
+    "express": "^5.3.0",
+    "maplibre-gl": "^6.19.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.1"
+  }
+}

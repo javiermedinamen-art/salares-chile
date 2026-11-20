@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1317">
+  <title>Salares de Chile · Fundación Salares</title>
+  <meta name="description" content="Mapa interactivo de los salares y lagunas de Chile, con la ciencia y la divulgación que se hace en ellos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/maplibre/maplibre-gl.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="strip-open">
+  <div id="map" role="application" aria-label="Mapa de salares de Chile"></div>
+
+  <header id="topbar">
+    <a id="brand" href="#/" aria-label="Salares de Chile, inicio">
+      <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path d="M16 2l12 7v14l-12 7L4 23V9z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 2v28M4 9l24 14M28 9L4 23" stroke="currentColor" stroke-width="1" opacity=".45"/><circle cx="16" cy="16" r="3.2" fill="var(--accent)"/></svg>
+      <span><b>Salares de Chile</b><small>Fundación Salares</small></span>
+    </a>
+
+    <div id="omni">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input id="omni-input" type="text" placeholder="Busca un salar, un proyecto o una actividad…" autocomplete="off" spellcheck="false" aria-label="Buscar" role="combobox" aria-expanded="false" aria-controls="omni-results">
+      <kbd>/</kbd>
+      <button id="surprise" title="Llévame a un salar con contenido">✦ Sorpréndeme</button>
+      <div id="omni-results" role="listbox" hidden></div>
+    </div>
+
+    <div id="tools">
+      <div id="lenses" role="radiogroup" aria-label="Colorear el mapa por"></div>
+      <div class="seg" id="basemaps" role="radiogroup" aria-label="Mapa base"></div>
+      <button id="btn3d" class="tool" aria-pressed="false" title="Relieve 3D de los Andes (exagerado ×3, solo visualización)">3D</button>
+    </div>
+  </header>
+
+  <aside id="drawer" aria-label="Panel de información">
+    <div id="sheet-handle" role="button" tabindex="0" aria-label="Expandir o contraer panel"></div>
+    <div id="panel-body"></div>
+  </aside>
+  <button id="drawer-toggle" aria-label="Mostrar u ocultar el panel" title="Mostrar/ocultar panel"><span></span></button>
+
+  <div id="legend" aria-live="polite"></div>
+  <p id="terrain-note" hidden role="note">Relieve 3D exagerado ×3 · solo para visualización; las altitudes reales están en cada ficha</p>
+
+  <section id="transect" aria-label="Perfil norte a sur">
+    <div class="t-head">
+      <div><b>Perfil norte → sur</b><span> · cada círculo es un salar: altura = altitud, tamaño = superficie</span></div>
+      <button id="strip-toggle" aria-label="Mostrar u ocultar el perfil">⌄</button>
+    </div>
+    <div id="transect-plot"></div>
+  </section>
+
+  <div id="lightbox" hidden></div>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+node_modules/
+db/salares.db
+db/salares.db-*
+demos/_record/
+.DS_Store
+*.log
+playwright-report/
+test-results/

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="hsl(104,45%,78%)"/><stop offset="1" stop-color="hsl(144,50%,45%)"/></linearGradient></defs>
+<rect width="400" height="300" fill="url(#g)"/>
+<path d="M0 230 L90 170 L160 210 L250 130 L330 190 L400 150 L400 300 L0 300Z" fill="rgba(255,255,255,.28)"/>
+<text x="200" y="150" font-size="54" text-anchor="middle" fill="rgba(255,255,255,.85)" font-family="sans-serif">▲</text>
+<text x="200" y="278" font-size="15" text-anchor="middle" fill="rgba(255,255,255,.9)" font-family="sans-serif">Laguna Verde · imagen de ejemplo</text>
+</svg>
