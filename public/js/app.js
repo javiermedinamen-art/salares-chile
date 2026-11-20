@@ -231,8 +231,7 @@ async function openDetail(p, first) {
   setSelected(p.id, S.detail?.geometry ?? null);
   if (S.detail) return;
   try {
-    const d = await api(`salares/${p.slug}`);
-    d = withAssets(d);
+    const d = withAssets(await api(`salares/${p.slug}`));
     S.detailCache.set(p.slug, d);
     if (S.slug !== p.slug) return;          // el usuario ya se fue a otro lado
     S.detail = d;
